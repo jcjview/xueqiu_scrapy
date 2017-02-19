@@ -22,10 +22,13 @@ time.sleep(3)
 # pickle.dump( browser.get_cookies() , open("cookies.pkl","wb"))
 pages=browser.find_elements_by_xpath('//*[@id="container"]/div/div/div/div/div/div/div/p')
 
-
+f=open("demo.txt","w")
 
 for p in pages:
-    print p.text
+    t=p.text
+    f.write(t.encode("utf-8"))
+    f.write("\n")
+f.close()
 
 # pageSource = browser.page_source
 # print pageSource
